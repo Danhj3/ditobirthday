@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Cuenta Regresiva Cumpleaños!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f7f3ff;
+      --color-accent: #ffd6e0;
+      --color-accent2: #aeeafc;
+      --color-btn: #ffd6e0;
+      --color-btn-hover: #ffe3ee;
+      --color-text: #47456e;
+      --shadow: 0 4px 24px 0 rgba(210,180,222,0.16);
+    }
+    body {
+      min-height: 100vh;
+      min-width: 100vw;
+      margin: 0;
+      background: var(--color-bg) url('https://i.imgur.com/XQg4BEP.png') repeat;
+      background-size: 250px auto;
+      font-family: 'Montserrat', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .container {
+      background: rgba(255,255,255,0.9);
+      margin-top: 2rem;
+      border-radius: 2rem;
+      box-shadow: var(--shadow);
+      padding: 2rem 2.5rem 2.5rem 2.5rem;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: var(--color-accent2);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px #fff9, 0 1px 0 #fff;
+    }
+    .countdown {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--color-text);
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      background: var(--color-accent);
+      border-radius: 1rem;
+      margin: 1.5rem 0;
+      padding: 1rem 0.8rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+    }
+    .countdown span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .countdown .num {
+      font-size: 2.2rem;
+      color: var(--color-text);
+      background: var(--color-accent2);
+      border-radius: 0.6em;
+      width: 2.5em;
+      margin-bottom: 0.2em;
+      box-shadow: 0 2px 8px #aeeafc44;
+    }
+    .video-area {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .video-fake {
+      background: url('https://i.imgur.com/XQg4BEP.png') center/cover no-repeat;
+      width: 150px;
+      height: 90px;
+      border-radius: 1em;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+      border: 3px solid var(--color-accent2);
+    }
+    .video-fake::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, #fff4 0%, #ffe3ee88 100%);
+      z-index: 1;
+    }
+    .btn-cumple {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+      background: var(--color-btn);
+      border: none;
+      border-radius: 1em;
+      box-shadow: var(--shadow);
+      padding: 0.9em 2em;
+      margin: 1.5em auto 0 auto;
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
+      outline: none;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+    }
+    .btn-cumple:hover, .btn-cumple:active {
+      background: var(--color-btn-hover);
+      box-shadow: 0 0 0 3px var(--color-accent2), var(--shadow);
+      transform: scale(1.04);
+    }
+    .btn-cumple .icon {
+      font-size: 1.5em;
+      display: inline-block;
+      margin-bottom: -0.2em;
+      filter: drop-shadow(0 2px 8px #aeeafc44);
+    }
+    .pie {
+      font-size: 1rem;
+      color: #8f8ca8;
+      margin-top: 1.5rem;
+      letter-spacing: 0.08em;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1.2rem 0.4rem 2rem 0.4rem; }
+      .video-area { flex-direction: column; gap: 0.8rem; }
+      .video-fake { width: 99%; max-width: 300px; height: 70px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎂 ¡Cuenta Regresiva!</h1>
+    <div class="video-area">
+      <div class="video-fake"></div>
+      <div class="video-fake"></div>
+    </div>
+    <div class="countdown" id="countdown">
+      <span><div class="num" id="days">00</div><small>días</small></span>
+      <span><div class="num" id="hours">00</div><small>horas</small></span>
+      <span><div class="num" id="minutes">00</div><small>min</small></span>
+      <span><div class="num" id="seconds">00</div><small>seg</small></span>
+    </div>
+    <button class="btn-cumple" onclick="playMusic()" id="btn-music">
+      <span class="icon">🎵</span>
+      ¡Cumpleaños!
+    </button>
+    <audio id="birthdayMusic" src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b8ed2.mp3"></audio>
+    <div class="pie">
+      Diseñado para un cumpleaños especial <span style="color: #ffd6e0;">♥</span>
+    </div>
+  </div>
+
+  <script>
+    // Cuenta regresiva al 31 de agosto, 23:59:59
+    const finalDate = new Date('2024-08-31T23:59:59');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = finalDate - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = "<span style='font-size:1.4em;color:#aeeafc;'>¡Feliz Cumpleaños!</span>";
+        return;
+      }
+      const days = Math.floor(diff/(1000*60*60*24));
+      const hours = Math.floor((diff/(1000*60*60)) % 24);
+      const minutes = Math.floor((diff/(1000*60)) % 60);
+      const seconds = Math.floor((diff/1000) % 60);
+      document.getElementById('days').textContent = days.toString().padStart(2,'0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2,'0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2,'0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2,'0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Reproducir música
+    let isPlaying = false;
+    function playMusic() {
+      const audio = document.getElementById('birthdayMusic');
+      if (!isPlaying) {
+        audio.currentTime = 0;
+        audio.play();
+        isPlaying = true;
+        document.getElementById('btn-music').innerHTML = '<span class="icon">🎉</span> ¡Que suene la fiesta!';
+      } else {
+        audio.pause();
+        isPlaying = false;
+        document.getElementById('btn-music').innerHTML = '<span class="icon">🎵</span> ¡Cumpleaños!';
+      }
+      audio.onended = () => {
+        isPlaying = false;
+        document.getElementById('btn-music').innerHTML = '<span class="icon">🎵</span> ¡Cumpleaños!';
+      }
+    }
+  </script>
+</body>
+</html>

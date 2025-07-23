@@ -28,7 +28,7 @@
       justify-content: flex-start;
     }
     .container {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.93);
       margin-top: 2rem;
       border-radius: 2rem;
       box-shadow: var(--shadow);
@@ -80,23 +80,15 @@
       gap: 1rem;
       margin-bottom: 1.5rem;
     }
-    .video-fake {
+    video {
       background: url('https://i.imgur.com/XQg4BEP.png') center/cover no-repeat;
       width: 150px;
       height: 90px;
       border-radius: 1em;
       box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s;
       border: 3px solid var(--color-accent2);
-    }
-    .video-fake::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, #fff4 0%, #ffe3ee88 100%);
-      z-index: 1;
+      object-fit: cover;
+      transition: transform 0.2s;
     }
     .btn-cumple {
       font-family: 'Montserrat', sans-serif;
@@ -137,7 +129,7 @@
     @media (max-width: 600px) {
       .container { padding: 1.2rem 0.4rem 2rem 0.4rem; }
       .video-area { flex-direction: column; gap: 0.8rem; }
-      .video-fake { width: 99%; max-width: 300px; height: 70px; }
+      video { width: 99%; max-width: 300px; height: 70px; }
     }
   </style>
 </head>
@@ -145,8 +137,8 @@
   <div class="container">
     <h1>🎂 ¡Cuenta Regresiva!</h1>
     <div class="video-area">
-      <div class="video-fake"></div>
-      <div class="video-fake"></div>
+      <video src="dito1.mp4" poster="https://i.imgur.com/XQg4BEP.png" muted loop autoplay playsinline></video>
+      <video src="dito2.mp4" poster="https://i.imgur.com/XQg4BEP.png" muted loop autoplay playsinline></video>
     </div>
     <div class="countdown" id="countdown">
       <span><div class="num" id="days">00</div><small>días</small></span>
@@ -158,7 +150,7 @@
       <span class="icon">🎵</span>
       ¡Cumpleaños!
     </button>
-    <audio id="birthdayMusic" src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b8ed2.mp3"></audio>
+    <audio id="birthdayMusic" src="Tralalero.mp3"></audio>
     <div class="pie">
       Diseñado para un cumpleaños especial <span style="color: #ffd6e0;">♥</span>
     </div>
@@ -208,3 +200,4 @@
   </script>
 </body>
 </html>
+

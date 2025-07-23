@@ -13,14 +13,14 @@
       --color-btn: #ffd6e0;
       --color-btn-hover: #ffe3ee;
       --color-text: #47456e;
-      --shadow: 0 4px 24px 0 rgba(210,180,222,0.16);
+      --shadow: 0 6px 32px 0 rgba(210,180,222,0.22);
     }
     body {
       min-height: 100vh;
       min-width: 100vw;
       margin: 0;
       background: var(--color-bg) url('https://i.imgur.com/XQg4BEP.png') repeat;
-      background-size: 250px auto;
+      background-size: 270px auto;
       font-family: 'Montserrat', Arial, sans-serif;
       display: flex;
       flex-direction: column;
@@ -28,79 +28,123 @@
       justify-content: flex-start;
     }
     .container {
-      background: rgba(255,255,255,0.93);
-      margin-top: 2rem;
-      border-radius: 2rem;
+      background: rgba(255,255,255,0.94);
+      margin-top: 3.3rem;
+      border-radius: 3rem;
       box-shadow: var(--shadow);
-      padding: 2rem 2.5rem 2.5rem 2.5rem;
-      max-width: 440px;
+      padding: 3.5rem 4.5rem 3.5rem 4.5rem;
+      max-width: 620px;
       width: 100%;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h1 {
       font-family: 'Pacifico', cursive;
       color: var(--color-accent2);
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3.2rem;
+      margin-bottom: 0.2rem;
       letter-spacing: 1px;
-      text-shadow: 0 2px 10px #fff9, 0 1px 0 #fff;
+      text-shadow: 0 2px 16px #fff9, 0 1px 0 #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+    }
+    .subtitulo {
+      font-size: 1.45rem;
+      color: var(--color-accent2);
+      margin-bottom: 2.4rem;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.05em;
+      font-weight: 700;
     }
     .countdown {
       font-family: 'Montserrat', sans-serif;
       color: var(--color-text);
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: bold;
       letter-spacing: 0.12em;
       background: var(--color-accent);
-      border-radius: 1rem;
-      margin: 1.5rem 0;
-      padding: 1rem 0.8rem;
+      border-radius: 1.2rem;
+      margin: 1.5rem 0 2.3rem 0;
+      padding: 1.3rem 2.5rem 1.3rem 2.5rem;
       box-shadow: var(--shadow);
       display: flex;
       justify-content: space-around;
-      gap: 1rem;
+      gap: 2.5rem;
+      width: 100%;
+      max-width: 450px;
     }
     .countdown span {
       display: flex;
       flex-direction: column;
       align-items: center;
+      font-size: 1.1rem;
     }
     .countdown .num {
-      font-size: 2.2rem;
+      font-size: 3rem;
       color: var(--color-text);
       background: var(--color-accent2);
-      border-radius: 0.6em;
-      width: 2.5em;
+      border-radius: 0.7em;
+      width: 2.8em;
       margin-bottom: 0.2em;
-      box-shadow: 0 2px 8px #aeeafc44;
+      box-shadow: 0 2px 10px #aeeafc44;
+      font-weight: 900;
+    }
+    .faltan-dias {
+      font-size: 2.3rem;
+      color: var(--color-accent2);
+      margin-bottom: 1.3rem;
+      margin-top: 0.6rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      background: var(--color-accent);
+      border-radius: 1.1em;
+      display: inline-block;
+      padding: 0.2em 1.3em;
+      box-shadow: var(--shadow);
     }
     .video-area {
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      gap: 2.2rem;
+      margin-bottom: 2.3rem;
     }
     video {
       background: url('https://i.imgur.com/XQg4BEP.png') center/cover no-repeat;
-      width: 150px;
-      height: 90px;
-      border-radius: 1em;
+      width: 210px;
+      height: 135px;
+      border-radius: 1.5em;
       box-shadow: var(--shadow);
-      border: 3px solid var(--color-accent2);
+      border: 4px solid var(--color-accent2);
       object-fit: cover;
       transition: transform 0.2s;
     }
+    .mensaje {
+      font-size: 1.35rem;
+      margin: 2.2rem 0 1.7rem 0;
+      color: #696498;
+      background: #fff9;
+      padding: 1.2em 2em;
+      border-radius: 1.1em;
+      box-shadow: 0 2px 10px #ffe3ee66;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7em;
+    }
     .btn-cumple {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.4rem;
+      font-weight: 800;
       color: var(--color-text);
       background: var(--color-btn);
       border: none;
-      border-radius: 1em;
+      border-radius: 1.2em;
       box-shadow: var(--shadow);
-      padding: 0.9em 2em;
-      margin: 1.5em auto 0 auto;
+      padding: 1em 2.4em;
+      margin: 2.1em auto 0 auto;
       cursor: pointer;
       transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
       outline: none;
@@ -111,40 +155,49 @@
     }
     .btn-cumple:hover, .btn-cumple:active {
       background: var(--color-btn-hover);
-      box-shadow: 0 0 0 3px var(--color-accent2), var(--shadow);
-      transform: scale(1.04);
+      box-shadow: 0 0 0 4px var(--color-accent2), var(--shadow);
+      transform: scale(1.045);
     }
     .btn-cumple .icon {
-      font-size: 1.5em;
+      font-size: 1.7em;
       display: inline-block;
       margin-bottom: -0.2em;
       filter: drop-shadow(0 2px 8px #aeeafc44);
     }
     .pie {
-      font-size: 1rem;
+      font-size: 1.12rem;
       color: #8f8ca8;
-      margin-top: 1.5rem;
+      margin-top: 2.7rem;
       letter-spacing: 0.08em;
     }
-    @media (max-width: 600px) {
-      .container { padding: 1.2rem 0.4rem 2rem 0.4rem; }
-      .video-area { flex-direction: column; gap: 0.8rem; }
-      video { width: 99%; max-width: 300px; height: 70px; }
+    @media (max-width: 800px) {
+      .container { padding: 1.5rem 0.4rem 1.7rem 0.4rem; max-width: 99vw;}
+      .video-area { flex-direction: column; gap: 1.1rem; }
+      video { width: 100%; max-width: 330px; height: 120px;}
+      .countdown {gap: 1rem; padding: 1rem 0.3rem;}
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🎂 ¡Cuenta Regresiva!</h1>
+    <div class="subtitulo">¡Nos preparamos para un cumpleaños increíble!</div>
     <div class="video-area">
       <video src="dito1.mp4" poster="https://i.imgur.com/XQg4BEP.png" muted loop autoplay playsinline></video>
       <video src="dito2.mp4" poster="https://i.imgur.com/XQg4BEP.png" muted loop autoplay playsinline></video>
     </div>
+    <div class="faltan-dias" id="faltan-dias"></div>
     <div class="countdown" id="countdown">
       <span><div class="num" id="days">00</div><small>días</small></span>
       <span><div class="num" id="hours">00</div><small>horas</small></span>
       <span><div class="num" id="minutes">00</div><small>min</small></span>
       <span><div class="num" id="seconds">00</div><small>seg</small></span>
+    </div>
+    <div class="mensaje">
+      ¡Ya falta poco para celebrar! <br>
+      Que la emoción crezca cada día, porque el cumpleaños se acerca y será inolvidable.<br>
+      Prepárate para un día lleno de alegría, sorpresas, risas, música y amistad.<br>
+      <b>¡Cuenta regresiva activada!</b>
     </div>
     <button class="btn-cumple" onclick="playMusic()" id="btn-music">
       <span class="icon">🎵</span>
@@ -162,10 +215,15 @@
     function updateCountdown() {
       const now = new Date();
       const diff = finalDate - now;
+      let faltanDias = Math.ceil(diff / (1000*60*60*24));
       if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = "<span style='font-size:1.4em;color:#aeeafc;'>¡Feliz Cumpleaños!</span>";
+        document.getElementById('countdown').innerHTML = "<span style='font-size:1.8em;color:#aeeafc;'>¡Feliz Cumpleaños!</span>";
+        document.getElementById('faltan-dias').innerHTML = '';
         return;
       }
+      // Faltan XX días
+      document.getElementById('faltan-dias').innerHTML = "Faltan <b>"+faltanDias+"</b> días";
+      // Formato detallado
       const days = Math.floor(diff/(1000*60*60*24));
       const hours = Math.floor((diff/(1000*60*60)) % 24);
       const minutes = Math.floor((diff/(1000*60)) % 60);
@@ -200,4 +258,3 @@
   </script>
 </body>
 </html>
-

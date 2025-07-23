@@ -250,11 +250,11 @@
       let faltanDias = Math.ceil(diff / (1000*60*60*24));
       document.getElementById('supercontador').innerHTML = (diff > 0)
         ? faltanDias + ' DÍAS'
-        : '¡Feliz Cumpleaños!';
+        : '¡Cumpleaños de Dito!';
       // Centrado especial para 39 días o para día final
       if (diff <= 0) {
         document.getElementById('countdown').innerHTML =
-          "<div class='centrado'><span style='font-size:1.2em;color:#aeeafc;'>¡Feliz Cumpleaños!</span></div>";
+          "<div class='centrado'><span style='font-size:1.2em;color:#aeeafc;'>¡39 Días!</span></div>";
         return;
       }
       if (faltanDias === 39) {

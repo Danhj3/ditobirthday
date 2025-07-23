@@ -141,6 +141,12 @@
       font-weight: 900;
       text-align: center;
     }
+    .centrado {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .mensaje {
       font-size: 0.99rem;
       margin: 0.9rem 0 1rem 0;
@@ -188,7 +194,6 @@
       margin-top: 1rem;
       letter-spacing: 0.06em;
     }
-    /* Responsive aún más pequeño */
     @media (max-width: 480px) {
       .container { padding: 0.7rem 0.05rem 0.7rem 0.05rem; max-width: 100vw;}
       .supercontador { font-size: clamp(1.1rem, 7vw, 1.65rem);}
@@ -215,7 +220,10 @@
       <video src="dito2.mp4" poster="https://i.imgur.com/XQg4BEP.png" muted loop autoplay playsinline></video>
     </div>
     <div class="countdown" id="countdown">
-      <span><div class="num" id="days">39</div><small>días</small></span>
+      <span><div class="num" id="days">00</div><small>días</small></span>
+      <span><div class="num" id="hours">00</div><small>horas</small></span>
+      <span><div class="num" id="minutes">00</div><small>min</small></span>
+      <span><div class="num" id="seconds">00</div><small>seg</small></span>
     </div>
     <div class="mensaje">
       ¡Ya falta poco para celebrar!<br>
@@ -234,7 +242,7 @@
   </div>
 
   <script>
-    // Cuenta regresiva al 31 de agosto, 23:59:59
+    // Fecha objetivo: 31 de agosto, 23:59:59
     const finalDate = new Date('2024-08-31T23:59:59');
     function updateCountdown() {
       const now = new Date();
@@ -242,12 +250,19 @@
       let faltanDias = Math.ceil(diff / (1000*60*60*24));
       document.getElementById('supercontador').innerHTML = (diff > 0)
         ? faltanDias + ' DÍAS'
-        : '¡Cumpleaños de Dito!';
+        : '¡Feliz Cumpleaños!';
+      // Centrado especial para 39 días o para día final
       if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = "<span style='font-size:1.2em;color:#aeeafc;'>¡39 de días!</span>";
+        document.getElementById('countdown').innerHTML =
+          "<div class='centrado'><span style='font-size:1.2em;color:#aeeafc;'>¡Feliz Cumpleaños!</span></div>";
         return;
       }
-      // Formato detallado
+      if (faltanDias === 39) {
+        document.getElementById('countdown').innerHTML =
+          "<div class='centrado'><span style='font-size:1.2em;color:#aeeafc;'>¡39 días!</span></div>";
+        return;
+      }
+      // Formato detallado clásico
       const days = Math.floor(diff/(1000*60*60*24));
       const hours = Math.floor((diff/(1000*60*60)) % 24);
       const minutes = Math.floor((diff/(1000*60)) % 60);

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
   <title>¡Cuenta Regresiva Cumpleaños!</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Pacifico&display=swap" rel="stylesheet">
   <style>
@@ -17,28 +17,30 @@
     }
     html, body {
       height: 100%;
-    }
-    body {
-      min-height: 100vh;
-      min-width: 100vw;
+      width: 100%;
+      padding: 0;
       margin: 0;
-      background: var(--color-bg) url('https://i.imgur.com/XQg4BEP.png') repeat;
-      background-size: 270px auto;
-      font-family: 'Montserrat', Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       box-sizing: border-box;
     }
+    body {
+      background: var(--color-bg) url('https://i.imgur.com/XQg4BEP.png') repeat;
+      background-size: 230px auto;
+      font-family: 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow-x: hidden;
+    }
     .container {
-      background: rgba(255,255,255,0.94);
-      margin-top: 2.2rem;
-      border-radius: 2rem;
+      background: rgba(255,255,255,0.97);
+      margin: 1.4rem 0 1.2rem 0;
+      border-radius: 1.5rem;
       box-shadow: var(--shadow);
-      padding: 2rem 2.5rem 2rem 2.5rem;
-      max-width: 620px;
-      width: 95vw;
+      padding: 1.2rem 0.8rem 1.5rem 0.8rem;
+      width: 97vw;
+      max-width: 420px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -46,161 +48,160 @@
     }
     .supercontador {
       font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 3.7rem;
+      font-size: 2.6rem;
       font-weight: 900;
       color: var(--color-accent2);
-      margin-bottom: 1rem;
-      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.07em;
       background: var(--color-accent);
-      border-radius: 2em;
-      padding: 0.3em 1.5em 0.15em 1.5em;
+      border-radius: 1.7em;
+      padding: 0.23em 0.7em 0.11em 0.7em;
       box-shadow: var(--shadow);
       display: inline-block;
       text-shadow: 0 2px 10px #fff, 0 1px 0 #fff;
       width: auto;
-      max-width: 96vw;
-      margin-top: 0.2rem;
+      max-width: 92vw;
+      margin-top: 0.1rem;
+      font-size: clamp(1.2rem, 7vw, 2.7rem);
     }
     h1 {
       font-family: 'Pacifico', cursive;
       color: var(--color-accent2);
-      font-size: 2.2rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.7rem;
+      margin-bottom: 0.1rem;
       letter-spacing: 1px;
       text-shadow: 0 2px 16px #fff9, 0 1px 0 #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5em;
-      margin-top: 0.5rem;
+      gap: 0.3em;
+      margin-top: 0.4rem;
     }
     .subtitulo {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--color-accent2);
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.1rem;
       font-family: 'Montserrat', sans-serif;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       font-weight: 700;
     }
     .video-area {
       display: flex;
       justify-content: space-between;
-      gap: 1.4rem;
-      margin-bottom: 1.7rem;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
       width: 100%;
     }
     video {
       background: url('https://i.imgur.com/XQg4BEP.png') center/cover no-repeat;
-      width: 210px;
-      height: 120px;
-      border-radius: 1.2em;
+      width: 49vw;
+      max-width: 172px;
+      min-width: 90px;
+      height: 68px;
+      border-radius: 1em;
       box-shadow: var(--shadow);
-      border: 4px solid var(--color-accent2);
+      border: 3px solid var(--color-accent2);
       object-fit: cover;
       transition: transform 0.2s;
-      max-width: 48vw;
-    }
-    .faltan-dias {
-      display: none; /* Ya no se usa, lo reemplaza el supercontador */
     }
     .countdown {
       font-family: 'Montserrat', sans-serif;
       color: var(--color-text);
-      font-size: 1.7rem;
+      font-size: 1.1rem;
       font-weight: bold;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.09em;
       background: var(--color-accent);
-      border-radius: 1.2rem;
-      margin: 1.1rem 0 1.2rem 0;
-      padding: 0.8rem 0.8rem;
+      border-radius: 1.1rem;
+      margin: 0.6rem 0 1.1rem 0;
+      padding: 0.6rem 0.4rem;
       box-shadow: var(--shadow);
       display: flex;
-      justify-content: space-around;
-      gap: 1.1rem;
+      justify-content: space-between;
+      gap: 0.4rem;
       width: 100%;
-      max-width: 400px;
-      min-width: 220px;
+      max-width: 320px;
+      min-width: 175px;
       flex-wrap: wrap;
     }
     .countdown span {
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: 1.05rem;
-      min-width: 55px;
+      font-size: 0.97rem;
+      min-width: 42px;
     }
     .countdown .num {
-      font-size: 2.2rem;
+      font-size: 1.6rem;
       color: var(--color-text);
       background: var(--color-accent2);
       border-radius: 0.7em;
-      width: 2.1em;
-      margin-bottom: 0.1em;
+      width: 1.9em;
+      margin-bottom: 0.07em;
       box-shadow: 0 2px 10px #aeeafc44;
       font-weight: 900;
       text-align: center;
     }
     .mensaje {
-      font-size: 1.08rem;
-      margin: 1.3rem 0 1.3rem 0;
+      font-size: 0.99rem;
+      margin: 0.9rem 0 1rem 0;
       color: #696498;
       background: #fff9;
-      padding: 1.1em 1em;
-      border-radius: 1.1em;
+      padding: 0.9em 0.5em;
+      border-radius: 1em;
       box-shadow: 0 2px 10px #ffe3ee66;
       font-family: 'Montserrat', sans-serif;
-      line-height: 1.6em;
+      line-height: 1.55em;
     }
     .btn-cumple {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.17rem;
+      font-size: 1rem;
       font-weight: 800;
       color: var(--color-text);
       background: var(--color-btn);
       border: none;
-      border-radius: 1.2em;
+      border-radius: 1.1em;
       box-shadow: var(--shadow);
-      padding: 0.8em 2em;
-      margin: 1.3em auto 0 auto;
+      padding: 0.7em 1.4em;
+      margin: 1em auto 0 auto;
       cursor: pointer;
       transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
       outline: none;
       position: relative;
       display: flex;
       align-items: center;
-      gap: 0.7em;
+      gap: 0.5em;
+    }
+    .btn-cumple .icon {
+      font-size: 1.1em;
+      display: inline-block;
+      margin-bottom: -0.05em;
+      filter: drop-shadow(0 2px 8px #aeeafc44);
     }
     .btn-cumple:hover, .btn-cumple:active {
       background: var(--color-btn-hover);
-      box-shadow: 0 0 0 4px var(--color-accent2), var(--shadow);
+      box-shadow: 0 0 0 3px var(--color-accent2), var(--shadow);
       transform: scale(1.045);
     }
-    .btn-cumple .icon {
-      font-size: 1.5em;
-      display: inline-block;
-      margin-bottom: -0.1em;
-      filter: drop-shadow(0 2px 8px #aeeafc44);
-    }
     .pie {
-      font-size: 1.04rem;
+      font-size: 0.95rem;
       color: #8f8ca8;
-      margin-top: 1.3rem;
-      letter-spacing: 0.08em;
+      margin-top: 1rem;
+      letter-spacing: 0.06em;
     }
-    /* Responsivo */
-    @media (max-width: 680px) {
-      .container { padding: 1.1rem 0.4rem 1.1rem 0.4rem; max-width: 99vw;}
-      .supercontador { font-size: 2.3rem; padding: 0.24em 0.8em; }
-      .video-area { flex-direction: column; gap: 0.9rem; }
-      video { width: 99%; max-width: 350px; min-width: 150px; height: 90px;}
-      .countdown {gap: 0.4rem; padding: 0.7rem 0.15rem; font-size: 1.17rem;}
-      .mensaje { font-size: 0.97rem; padding: 0.8em 0.4em;}
-    }
+    /* Responsive aún más pequeño */
     @media (max-width: 480px) {
-      .supercontador { font-size: 1.45rem; padding: 0.15em 0.45em; }
-      .countdown { font-size: 0.97rem; }
-      .mensaje { font-size: 0.91rem; }
-      video { height: 65px; }
+      .container { padding: 0.7rem 0.05rem 0.7rem 0.05rem; max-width: 100vw;}
+      .supercontador { font-size: clamp(1.1rem, 7vw, 1.65rem);}
+      .video-area { flex-direction: column; gap: 0.6rem;}
+      video { width: 97vw; max-width: 280px; min-width: 120px; height: 54px;}
+      .countdown { font-size: 0.88rem; gap: 0.14rem; max-width: 99vw;}
+      .mensaje { font-size: 0.90rem; padding: 0.65em 0.17em;}
+      .btn-cumple { font-size: 0.96rem; padding: 0.55em 0.8em;}
+    }
+    @media (max-width: 330px) {
+      .container { padding: 0.1rem 0.01rem; }
+      .supercontador { font-size: 1.05rem; padding: 0.11em 0.15em;}
+      .mensaje { font-size: 0.79rem;}
     }
   </style>
 </head>
@@ -224,7 +225,7 @@
     </div>
     <button class="btn-cumple" onclick="playMusic()" id="btn-music">
       <span class="icon">🎵</span>
-      ¡Festejemos!
+      ¡Cumpleaños!
     </button>
     <audio id="birthdayMusic" src="Tralalero.mp3"></audio>
     <div class="pie">
@@ -239,12 +240,11 @@
       const now = new Date();
       const diff = finalDate - now;
       let faltanDias = Math.ceil(diff / (1000*60*60*24));
-      // Muestra el supercontador grande SIEMPRE que falten días
       document.getElementById('supercontador').innerHTML = (diff > 0)
         ? faltanDias + ' DÍAS'
         : '¡Cumpleaños de Dito!';
       if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = "<span style='font-size:1.4em;color:#aeeafc;'>¡39 días!</span>";
+        document.getElementById('countdown').innerHTML = "<span style='font-size:1.2em;color:#aeeafc;'>¡39 de días!</span>";
         return;
       }
       // Formato detallado
@@ -282,3 +282,4 @@
   </script>
 </body>
 </html>
+
